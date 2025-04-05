@@ -16,5 +16,5 @@ class Book(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String)
     summary = Column(String)
-    publication_data = Column(Date)
+    publication_date = Column(Date)
     author_id = Column(Integer, ForeignKey('author.id'))
