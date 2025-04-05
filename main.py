@@ -46,7 +46,7 @@ def get_books(db: Session = Depends(get_db)):
 
 @app.get("/book/{book_id}", response_model=schemas.NumOfBook)
 def get_book_by_id(book_id: int, db: Session = Depends(get_db)):
-    db_book = crud.get_book_by_id(author_id=book_id, db=db)
+    db_book = crud.get_book_by_id(book_id=book_id, db=db)
     if db_book is None:
         raise HTTPException(status_code=404, detail="Book not found")
 
